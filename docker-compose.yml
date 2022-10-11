@@ -1,0 +1,48 @@
+# version: '3.8'
+
+services:
+  db:
+    container_name: db
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+    tty: true
+    platform: linux/x86_64
+    ports:
+      - 3306:3306
+    env_file:
+      - ./mysql/.env
+    volumes:
+      - type: volume
+        source: mysql_test_volume
+        target: /var/lib/mysql
+      - type: bind
+        source: ./mysql/init
+        target: /docker-entrypoint-initdb.d
+    networks:
+      - golang_test_network
+
+
+  
+
+  # app: # サービス名
+  #       build: ./backend # ビルドに使用するDockerfileの場所
+  #       tty: true # コンテナの永続化
+  #       ports: # ホストOSのポートとコンテナのポート番号 
+  #           - "8080:8080"
+  #       volumes:
+  #           - ./app:/go/src/app # マウントディレクトリ
+  #       depends_on: 
+  #           - db
+
+volumes:
+  mysql_test_volume:
+    name: mysql_test_volume
+
+networks:
+  golang_test_network:
+    external: true
+
+
+
+    
