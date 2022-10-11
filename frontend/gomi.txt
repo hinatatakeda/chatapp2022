@@ -1,0 +1,24 @@
+<div>
+<button type="button" class="btn btn-info modalBtn" data-toggle="modal" data-target="#sampleModal" data-watasu="ほげホゲ">edit</button>
+          <span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-blue-600 text-white ">
+            {data.text}{" "}
+            {data.retext == 0 && "編集済み"}
+          </span>
+  </div>
+
+
+
+
+  <h2 className='right'>{item.ID}</h2><img
+        src="https://www.conan-portal.com/img/chara01.jpg"
+        alt="My profile"
+        className="w-6 h-6 rounded-full order-1 mx-1"
+        width="80" height="60"
+      />
+  <h2 >{item.Text} </h2>
+  
+  <h2> -------------------------- </h2>
+  
+
+</p>
+</div>
