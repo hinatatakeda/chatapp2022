@@ -105,11 +105,6 @@ func getRoom(c echo.Context) error {
 	// [ユーザ名]:[パスワード]@tcp([ホスト名]:[ポート番号])/[データベース名]?charset=[文字コード]
 
 
-MYSQL_DATABASE=test_database
-MYSQL_USER=hinatachat
-MYSQL_PASSWORD=Xr9Al616MPN46h0
-MYSQL_ROOT_PASSWORD=root_Xr9Al616MPN46h0
-INSTANCE_CONNECTION_NAME=custom-altar-365006:us-central1:chat2022
 
 	user := os.Getenv("MYSQL_USER")  
 	pass := os.Getenv("MYSQL_PASSWORD")  
