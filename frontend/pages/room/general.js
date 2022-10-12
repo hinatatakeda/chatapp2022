@@ -14,7 +14,7 @@ const General = () => {
   // chat dataを取得
   useEffect(() => {
     const userID = localStorage.getItem("userID");
-    axios.get('http://localhost:8080/chat?roomID=1')
+    axios.get('https://chat2022-wvzrowwi7q-uc.a.run.app/chat?roomID=1')
       .then((res) => {
         console.log(res.data);
         setChats(res.data);
@@ -30,7 +30,7 @@ const General = () => {
     if (text===""){
       return;
     }
-    axios.post(`http://localhost:8080/chat?roomID=1&userID=${userID}&chatText=${text}`)
+    axios.post(`https://chat2022-wvzrowwi7q-uc.a.run.app/chat?roomID=1&userID=${userID}&chatText=${text}`)
       .then((res) => {
         console.log(res.data);
         setText("");
@@ -44,7 +44,7 @@ const General = () => {
 
   // {/* delete */}
   const deleteChat = (chatID) => {
-    axios.delete(`http://localhost:8080/chat?chatID=${chatID}`)
+    axios.delete(`https://chat2022-wvzrowwi7q-uc.a.run.app/chat?chatID=${chatID}`)
       .then((res) => {
         console.log(res.data);
       })
@@ -59,7 +59,7 @@ const General = () => {
     if (text===""){
       return;
     }
-    axios.put(`http://localhost:8080/chat?chatID=${chatID}&chatText=${text}`)
+    axios.put(`https://chat2022-wvzrowwi7q-uc.a.run.app/chat?chatID=${chatID}&chatText=${text}`)
       .then((res) => {
         console.log(res.data);
         setIsEditting(false);
