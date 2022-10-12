@@ -274,9 +274,10 @@ const Random = () => {
 
 
       </div>  
-    
+    </div>
   )
-
-
 }
-export default Random ;
+
+
+
+export default Random;
