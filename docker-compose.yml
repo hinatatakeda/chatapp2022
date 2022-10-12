@@ -5,6 +5,7 @@ services:
     container_name: db
     build:
       context: ./mysql
+      dockerfile: Dockerfile
     tty: true
     platform: linux/x86_64
     ports:
@@ -25,7 +26,7 @@ services:
   
 
   app: # サービス名
-        build: ./backend # ビルドに使用するDockerfileの場所
+        build: ./backend/Dockerfile # ビルドに使用するDockerfileの場所
         tty: true # コンテナの永続化
         ports: # ホストOSのポートとコンテナのポート番号 
             - "8080:8080"
