@@ -5,7 +5,6 @@ services:
     container_name: db
     build:
       context: ./mysql
-      dockerfile: Dockerfile
     tty: true
     platform: linux/x86_64
     ports:
