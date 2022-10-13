@@ -235,9 +235,9 @@ const Random = () => {
         }}>ユーザーを切り替える</button>
       </div>
 
-        {chats.map((chat) => {
+        {chats.map((chat,index) => {
           return (
-            <div className={styles.sendgeneral} key={chat.ChatID}>
+            <div className={styles.sendgeneral} key={index}>
                <button onClick={()=>{
                 setIsEditting(true);
                 setEdittingChatID(chat.ChatID);
