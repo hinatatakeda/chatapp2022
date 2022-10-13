@@ -237,7 +237,7 @@ const Random = () => {
 
         {chats.map((chat) => {
           return (
-            <div className={styles.sendgeneral} key={chatID}>
+            <div className={styles.sendgeneral} key={chat.ChatID}>
                <button onClick={()=>{
                 setIsEditting(true);
                 setEdittingChatID(chat.ChatID);
