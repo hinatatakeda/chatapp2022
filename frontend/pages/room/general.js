@@ -124,13 +124,15 @@ const General = () => {
 
         {chats.map((chat) => {
           return (
-            <div className={styles.sendgeneral} key={ChatID}>
+            <div className={styles.sendgeneral} key={index}>
               
                <button onClick={()=>{
                 setIsEditting(true);
                 setEdittingChatID(chat.ChatID);
                 setText(chat.Text);
                }}>
+
+              
                 編集する
               </button>
               <button onClick={()=>{
