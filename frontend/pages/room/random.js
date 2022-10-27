@@ -101,8 +101,8 @@
 
 
 import {useState, useEffect} from 'react';
-import axios from 'axios'
-import Link from 'next/link'
+import axios from 'axios';
+import Link from 'next/link';
 
 import styles from '../../styles/Home.module.css'
 
