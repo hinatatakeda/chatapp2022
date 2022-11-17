@@ -219,9 +219,16 @@ func postChat(c echo.Context) error {
 	// [ユーザ名]:[パスワード]@tcp([ホスト名]:[ポート番号])/[データベース名]?charset=[文字コード]
 	// dbconf := "uttc:hello0325@unix(/cloudsql/term0-hinata-takeda:us-central1:uttc)/hackathon"
 
-	dbconf := "test_user:password@tcp(localhost:3306)/test_database?charset=utf8mb4"
+	// dbconf := "test_user:password@tcp(localhost:3306)/test_database?charset=utf8mb4"
+	user := os.Getenv("MYSQL_USER")  
+	pass := os.Getenv("MYSQL_PASSWORD")  
+	host := os.Getenv("INSTANCE_CONNECTION_NAME")  
+	name := os.Getenv("MYSQL_DATABASE")  
+	 
+	dbconf := fmt.Sprintf("%s:%s@%s/%s", user, pass, host, name)  
 
-	db, err := sql.Open("mysql", dbconf)
+
+		// db, err := sql.Open("mysql", dbconf)
 
 	if err != nil {
 		log.Fatalf("postChat db.Open error err:%v", err)
@@ -247,10 +254,17 @@ func editChat(c echo.Context) error {
 	// [ユーザ名]:[パスワード]@tcp([ホスト名]:[ポート番号])/[データベース名]?charset=[文字コード]
 	// dbconf := "uttc:hello0325@unix(/cloudsql/term0-hinata-takeda:us-central1:uttc)/hackathon"
 
-	dbconf := "test_user:password@tcp(localhost:3306)/test_database?charset=utf8mb4"
+	// dbconf := "test_user:password@tcp(localhost:3306)/test_database?charset=utf8mb4"
 
-	db, err := sql.Open("mysql", dbconf)
+	// db, err := sql.Open("mysql", dbconf)
 
+	user := os.Getenv("MYSQL_USER")  
+	pass := os.Getenv("MYSQL_PASSWORD")  
+	host := os.Getenv("INSTANCE_CONNECTION_NAME")  
+	name := os.Getenv("MYSQL_DATABASE")  
+	 
+	dbconf := fmt.Sprintf("%s:%s@%s/%s", user, pass, host, name)  
+	
 	if err != nil {
 		log.Fatalf("editChat db.Open error err:%v", err)
 		return c.JSON(http.StatusBadRequest, err)

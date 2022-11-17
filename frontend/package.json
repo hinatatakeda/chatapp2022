@@ -22,3 +22,14 @@
     "eslint-config-next": "12.2.5"
   }
 }
+
+
+{
+  "name": "axios",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
