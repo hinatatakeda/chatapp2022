@@ -6,8 +6,9 @@
 {
     "functions": {
       "frontend: {
-        "include folders": "./**"
+        
         "includeFiles": "./**"
+        
       }
     }
 }
