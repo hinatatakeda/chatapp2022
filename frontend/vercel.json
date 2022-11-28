@@ -1,4 +1,13 @@
 {
-    "rewrites": [{ "source": "../(.*)", "destination": "/" }]
+    "rewrites": [{ "source": "./(.*)", "destination": "/" }]
+    
   }
   
+{
+    "functions": {
+      "frontend: {
+        "include folders": "./**"
+        "includeFiles": "./**"
+      }
+    }
+}
