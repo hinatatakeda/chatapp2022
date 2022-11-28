@@ -4,11 +4,10 @@
   }
   
 {
-    "functions": {
-      "frontend: {
+  "functions": {
+      
         
         "includeFiles": "./**"
-        
+
       }
     }
-}
